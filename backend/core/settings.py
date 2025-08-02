@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 from dotenv import load_dotenv
 
@@ -44,19 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'drf_spectacular',
-
-    # Third party apps
-    'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
     'django_filters',
-    'drf_spectacular',
+    
     
     # Local apps
     'users',
     'curriculum',
-    'analysis',
+    #'analysis',
     'planning',
 ]
 
@@ -196,6 +193,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Logging
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

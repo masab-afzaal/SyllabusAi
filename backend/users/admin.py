@@ -1,14 +1,18 @@
-# users/admin.py
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+try:
+    admin.site.unregister(User)
+except admin.sites.NotRegistered:
+    pass
+
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     """Custom admin for extended User model"""
-    
+
     fieldsets = UserAdmin.fieldsets + (
         ('Profile Information', {
             'fields': ('age', 'grade_level', 'learning_style', 'knowledge_level')

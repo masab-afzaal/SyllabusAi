@@ -2,6 +2,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from curriculum.models import Syllabus, Topic
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 import uuid
 
 User = get_user_model()
