@@ -1,0 +1,32 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\masab\OneDrive\Desktop\hackathon\SyllabusAi\backend\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\masab\OneDrive\Desktop\hackathon\SyllabusAi\backend\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\masab\OneDrive\Desktop\hackathon\SyllabusAi\backend\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\masab\OneDrive\Desktop\hackathon\SyllabusAi\backend\curriculum\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\masab\OneDrive\Desktop\hackathon\SyllabusAi\backend\planning\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 79
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 71
+"POST /api/auth/login/ HTTP/1.1" 200 574
+Bad Request: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 400 105
+Bad Request: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 400 61
+"POST /api/auth/register/ HTTP/1.1" 201 563
