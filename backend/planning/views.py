@@ -1,4 +1,4 @@
-# planning/views.py
+# planning/views.py (Updated imports)
 from rest_framework import generics, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -11,7 +11,7 @@ from .serializers import (
     ScheduleBlockSerializer, StudySessionSerializer
 )
 from curriculum.models import Syllabus
-from .tasks import generate_learning_plan  # We'll create this in Module 3
+# Remove the import that doesn't exist yet - we'll create the planning tasks later
 
 class LearningPlanListView(generics.ListAPIView):
     """List user's learning plans"""
@@ -39,12 +39,12 @@ def create_learning_plan(request, syllabus_id):
     
     if serializer.is_valid():
         learning_plan = serializer.save()
-        # Trigger async plan generation
-        generate_learning_plan.delay(learning_plan.id)
+        # TODO: Trigger async plan generation in Module 3
+        # generate_learning_plan.delay(learning_plan.id)
         
         return Response({
             'learning_plan': LearningPlanSerializer(learning_plan).data,
-            'message': 'Learning plan creation started'
+            'message': 'Learning plan created successfully'
         }, status=status.HTTP_201_CREATED)
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -129,7 +129,8 @@ def end_study_session(request, session_id):
         # Update schedule block
         block = session.schedule_block
         block.status = 'completed'
-        block.actual_duration = (session.ended_at - session.started_at).total_seconds() / 60
+        if session.started_at and session.ended_at:
+            block.actual_duration = (session.ended_at - session.started_at).total_seconds() / 60
         block.save()
         
         return Response({

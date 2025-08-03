@@ -1,4 +1,4 @@
-# curriculum/views.py
+# curriculum/views.py (Updated to fix import)
 from rest_framework import generics, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -10,7 +10,7 @@ from .serializers import (
     SyllabusListSerializer, SyllabusDetailSerializer, SyllabusCreateSerializer,
     TopicSerializer
 )
-from .tasks import process_syllabus  # We'll create this in Module 2
+from analysis.tasks import process_syllabus  # Import from analysis app
 
 class SyllabusListCreateView(generics.ListCreateAPIView):
     """List user's syllabi or create new one"""
@@ -28,7 +28,7 @@ class SyllabusListCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         syllabus = serializer.save()
         # Trigger async processing
-        process_syllabus.delay(syllabus.id)
+        process_syllabus.delay(str(syllabus.id))
         return syllabus
 
 class SyllabusDetailView(generics.RetrieveUpdateDestroyAPIView):

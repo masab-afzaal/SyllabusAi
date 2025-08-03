@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,8 @@ urlpatterns = [
     path('api/auth/', include('users.urls')),
     path('api/curriculum/', include('curriculum.urls')),
     path('api/planning/', include('planning.urls')),
+    path('api/analysis/', include('analysis.urls')),
+
     
     # path('api/core/', include('core.urls')),
 

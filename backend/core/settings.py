@@ -53,9 +53,11 @@ INSTALLED_APPS = [
     # Local apps
     'users',
     'curriculum',
-    #'analysis',
+    'analysis',
     'planning',
 ]
+
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
