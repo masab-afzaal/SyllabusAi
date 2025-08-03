@@ -33,6 +33,7 @@ urlpatterns = [
     path('api/curriculum/', include('curriculum.urls')),
     path('api/planning/', include('planning.urls')),
     path('api/analysis/', include('analysis.urls')),
+    path('api/learning_plan/', include('learning_plan.urls')),
 
     
     # path('api/core/', include('core.urls')),

@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'curriculum',
     'analysis',
     'planning',
+    'learning_plan',
 ]
 
 AUTH_USER_MODEL = 'users.User'

@@ -18,3 +18,6 @@ C:\Users\masab\OneDrive\Desktop\hackathon\SyllabusAi\backend\planning\models.py 
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 79
+Watching for file changes with StatReloader
